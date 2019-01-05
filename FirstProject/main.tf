@@ -4,8 +4,13 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-module "Storage" {
-  source = "./Storage"
-  vpc_cidr_block = "${var.vpc_cidr_block}"
-  vpc_name = "${var.vpc_name}"
+# Deploy Networking Resources
+
+module "Networking" {
+  source = "./Networking"
+  vpc_cidr = "${var.vpc_cidr}"
+  pubsubnet_cidr = "${var.pubsubnet_cidr}"
+  pvtsubnet_cidr = "${var.pvtsubnet_cidr}"
+  sshpubsubaccessip = "${var.sshpubsubaccessip}"
+  httppubsubaccessip = "${var.httppubsubaccessip}"
 }

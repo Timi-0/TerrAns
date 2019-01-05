@@ -1,6 +1,6 @@
 # Networking/variables.tf
 variable "vpc_cidr" {
-    default = 18.0.0.0/16
+    default = "18.0.0.0/16"
 }
 
 variable "pubsubnet_cidr" {

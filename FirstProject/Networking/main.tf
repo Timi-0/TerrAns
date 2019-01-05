@@ -47,7 +47,7 @@ resource "aws_subnet" "mypublicsubnet" {
     vpc_id = "${aws_vpc.myvpc.id}"
     cidr_block = "${var.pubsubnet_cidr[count.index]}"
     map_public_ip_on_launch = true
-    availability_zone = "${data.aws_availability_zones.myavailabilityzones.name[count.index]}"
+    availability_zone = "${data.aws_availability_zones.myavailabilityzones.names[count.index]}"
     tags {
         Name = "PubSubnet${count.index + 1}"
     }
@@ -59,7 +59,7 @@ resource "aws_subnet" "myprivatesubnet" {
     vpc_id = "${aws_vpc.myvpc.id}"
     cidr_block = "${var.pvtsubnet_cidr[count.index]}"
     map_public_ip_on_launch = false
-    availability_zone = "${data.aws_availability_zones.myavailabilityzones.name[count.index]}"
+    availability_zone = "${data.aws_availability_zones.myavailabilityzones.names[count.index]}"
     tags {
         Name = "PvtSubnet${count.index + 1}"
     }

@@ -1,19 +1,11 @@
 # Servers/variables.tf
-variable "webserver_instance_count" {
-    default = 1
-}
+variable "webserver_instance_count" {}
 
-variable "appserver_instance_count" {
-    default = 1
-}
+variable "appserver_instance_count" {}
 
-variable "instance_type" {
-    default = t2.micro
-}
+variable "instance_type" {}
 
-variable "keyname" {
-    default = "NewStart"
-}
+variable "keyname" {}
 
 variable "webserversg" {}
 

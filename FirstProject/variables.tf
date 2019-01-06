@@ -21,13 +21,3 @@ variable "instance_type" {}
 
 variable "keyname" {}
 
-variable "webserversg" {}
-
-variable "appserversg" {}
-
-variable "pvtsubnet" {
-    type = "list"
-}
-variable "pubsubnet" {
-    type = "list"
-}

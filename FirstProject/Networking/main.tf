@@ -110,3 +110,35 @@ resource "aws_security_group" "mywebserversg" {
     }
 
 }
+
+# Create the Public Security Group for appserver
+resource "aws_security_group" "myappserversg" {
+    name = "myappserversg"
+    description = "Grants ports access to the appserver"
+    vpc_id = "${aws_vpc.myvpc.id}"
+
+    # SSH port rule
+    ingress {
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["${var.sshpubsubaccessip}"]
+    }
+
+    # HTTP port rule
+    ingress {
+        from_port = 80
+        to_port = 80
+        protocol = "tcp"
+        cidr_blocks = ["${var.httppubsubaccessip}"]
+    }
+
+    #Create the egress rule
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+}

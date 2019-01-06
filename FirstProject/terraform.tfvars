@@ -17,3 +17,7 @@ sshpubsubaccessip = "0.0.0.0/0"
 httppubsubaccessip = "0.0.0.0/0"
 
 #Servers Variables
+webserver_instance_count = 1
+appserver_instance_count = 1
+instance_type = t2.micro
+keyname = NewStart

@@ -14,3 +14,15 @@ module "Networking" {
   sshpubsubaccessip = "${var.sshpubsubaccessip}"
   httppubsubaccessip = "${var.httppubsubaccessip}"
 }
+
+module "Servers" {
+  source = "./Servers"
+  webserver_instance_count = "${var.webserver_instance_count}"
+  appserver_instance_count = "${var.appserver_instance_count}"
+  instance_type = "${var.instance_type}"
+  keyname = "${var.keyname}"
+  webserversg = "${var.webserversg}"
+  appserversg = "${var.appserversg}"
+  pvtsubnet = "${var.pvtsubnet}"
+  pubsubnet = "${var.pubsubner}"
+}

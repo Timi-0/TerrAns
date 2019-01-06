@@ -25,8 +25,8 @@ module "Servers" {
   appserver_instance_count = "${var.appserver_instance_count}"
   instance_type = "${var.instance_type}"
   keyname = "${var.keyname}"
-  webserversg = "${module.networking.webserversecuritygroup}"
-  appserversg = "${module.networking.appserversecuritygroup}"
-  pvtsubnet = "${module.networking.public_subnets}"
-  pubsubnet = "${module.networking.private_subnets}"
+  webserversg = "${module.Networking.webserversecuritygroup}"
+  appserversg = "${module.Networking.appserversecuritygroup}"
+  pvtsubnet = "${module.Networking.public_subnets}"
+  pubsubnet = "${module.Networking.private_subnets}"
 }

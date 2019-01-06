@@ -28,8 +28,8 @@ data "aws_ami" "appservermyami" {
 
 #Template file
 data "template_file" "myuserdata" {
-    count = "${var.instance_count}"
-    template = "{file("${path.module}/userdata.tpl")}"
+    count = "${var.webserver_instance_count}"
+    template = "${file("${path.module}/userdata.tpl")}"
 }
 #Create an ec2-instance
 resource "aws_instance" "mywebserver" {
